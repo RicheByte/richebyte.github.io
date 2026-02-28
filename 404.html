@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Not Found | RicheByte OS</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a0a;
+            color: #20c20e;
+            font-family: 'JetBrains Mono', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #20c20e;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+        a {
+            display: inline-block;
+            padding: 12px 24px;
+            border: 2px solid #20c20e;
+            color: #20c20e;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        a:hover, a:focus {
+            background-color: #20c20e;
+            color: #0a0a0a;
+            outline: none;
+            box-shadow: 0 0 15px #20c20e;
+        }
+        .cursor {
+            display: inline-block;
+            width: 12px;
+            height: 1.2rem;
+            background-color: #20c20e;
+            animation: blink 1s step-end infinite;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <p>ERROR: Resource not found.<br>The system cannot find the path specified.<span class="cursor"></span></p>
+        <a href="index.html" aria-label="Return to homepage">Return to root ( / )</a>
+    </div>
+</body>
+</html>

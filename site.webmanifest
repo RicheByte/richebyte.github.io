@@ -1,0 +1,9 @@
+{
+    "theme_color":  "#20c20e",
+    "name":  "RicheByte OS",
+    "display":  "standalone",
+    "short_name":  "RicheByte",
+    "background_color":  "#0a0a0a",
+    "description":  "Cybersecurity Portfolio OS",
+    "start_url":  "./index.html"
+}

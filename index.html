@@ -27,8 +27,19 @@
     <meta property="twitter:title" content="RicheByte OS - Cybersecurity Portfolio">
     <meta property="twitter:description" content="Interactive Web Desktop Portfolio of Kanchuka Induranga. Explore cybersecurity projects and tools in a unique OS interface.">
     <meta property="twitter:image" content="https://richebyte.github.io/portfolio/kali-ascii.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Performance Optimizations: Resource Prioritization & Async Loading -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Non-critical CSS / Fonts Loaded later -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /></noscript>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
+
     <style>
         :root {
             --bg-color: #0a0a0a;
@@ -687,7 +698,7 @@
     <!-- Top Bar -->
     <div id="top-bar">
         <div class="top-left">
-            <div id="logo-btn" onclick="triggerEasterEgg()">
+            <div id="logo-btn" role="button" tabindex="0" onclick="triggerEasterEgg()" aria-label="Trigger Easter Egg">
                 <i class="fab fa-linux" style="font-size: 1.2rem;"></i> <span>RicheByte OS</span>
             </div>
             <span id="active-app-name" style="font-weight: 600; opacity: 0.8;">Desktop</span>
@@ -701,19 +712,19 @@
 
     <!-- Desktop Icons -->
     <div id="desktop-icons">
-        <div class="desktop-icon-item" onclick="alert('Access Denied: System File')">
+        <div class="desktop-icon-item" role="button" tabindex="0" onclick="alert('Access Denied: System File')">
             <i class="fas fa-hdd"></i>
             <span>System</span>
         </div>
-        <div class="desktop-icon-item" onclick="alert('Trash is empty')">
+        <div class="desktop-icon-item" role="button" tabindex="0" onclick="alert('Trash is empty')">
             <i class="fas fa-trash-alt"></i>
             <span>Trash</span>
         </div>
-        <div class="desktop-icon-item" onclick="openWindow('projects')">
+        <div class="desktop-icon-item" role="button" tabindex="0" onclick="openWindow('projects')">
             <i class="fas fa-folder-open" style="color: #ffd54f;"></i>
             <span>Projects</span>
         </div>
-        <div class="desktop-icon-item" onclick="window.open('https://tryhackme.com/p/richebyte', '_blank')">
+        <div class="desktop-icon-item" role="button" tabindex="0" onclick="window.open('https://tryhackme.com/p/richebyte', '_blank')">
             <i class="fas fa-user-secret" style="color: #ff3333;"></i>
             <span>TryHackMe</span>
         </div>
@@ -774,24 +785,24 @@
     <!-- Dock -->
     <div id="dock-container">
         <div id="dock">
-            <div class="dock-item" onclick="openWindow('about')">
+            <div class="dock-item" role="button" tabindex="0" onclick="openWindow('about')">
                 <i class="fas fa-user-astronaut" style="color: #4fc3f7;"></i>
                 <span class="dock-label">About</span>
             </div>
-            <div class="dock-item" onclick="openWindow('projects')">
+            <div class="dock-item" role="button" tabindex="0" onclick="openWindow('projects')">
                 <i class="fas fa-folder-open" style="color: #ffd54f;"></i>
                 <span class="dock-label">Projects</span>
             </div>
-            <div class="dock-item" onclick="openWindow('skills')">
+            <div class="dock-item" role="button" tabindex="0" onclick="openWindow('skills')">
                 <i class="fas fa-brain" style="color: #ff8a65;"></i>
                 <span class="dock-label">Skills</span>
             </div>
 
-            <div class="dock-item" onclick="openWindow('browser')">
+            <div class="dock-item" role="button" tabindex="0" onclick="openWindow('browser')">
                 <i class="fas fa-globe" style="color: #b388ff;"></i>
                 <span class="dock-label">Tor</span>
             </div>
-            <div class="dock-item" onclick="openWindow('terminal')">
+            <div class="dock-item" role="button" tabindex="0" onclick="openWindow('terminal')">
                 <i class="fas fa-terminal" style="color: #e0e0e0;"></i>
                 <span class="dock-label">Terminal</span>
             </div>
@@ -804,9 +815,9 @@
     <div id="win-mission" class="window" style="top: 20%; left: 30%; width: 500px; height: 350px;">
         <div class="title-bar" style="background: rgba(32, 194, 14, 0.1);">
             <div class="window-controls">
-                <button class="control-btn close-btn" onclick="closeWindow('mission')"></button>
-                <button class="control-btn min-btn" onclick="minimizeWindow('mission')"></button>
-                <button class="control-btn max-btn"></button>
+                <button class="control-btn close-btn" aria-label="Close"  onclick="closeWindow('mission')"></button>
+                <button class="control-btn min-btn" aria-label="Minimize"  onclick="minimizeWindow('mission')"></button>
+                <button class="control-btn max-btn" aria-label="Maximize" ></button>
             </div>
             <span class="window-title" style="color: var(--accent-color);">Quick Overview</span>
         </div>
@@ -828,9 +839,9 @@
     <div id="win-recruiter" class="window" style="top: 10%; left: 10%; width: 700px; height: 600px;">
         <div class="title-bar">
             <div class="window-controls">
-                <button class="control-btn close-btn" onclick="closeWindow('recruiter')"></button>
-                <button class="control-btn min-btn" onclick="minimizeWindow('recruiter')"></button>
-                <button class="control-btn max-btn"></button>
+                <button class="control-btn close-btn" aria-label="Close"  onclick="closeWindow('recruiter')"></button>
+                <button class="control-btn min-btn" aria-label="Minimize"  onclick="minimizeWindow('recruiter')"></button>
+                <button class="control-btn max-btn" aria-label="Maximize" ></button>
             </div>
             <span class="window-title">Recruiter View</span>
         </div>
@@ -876,9 +887,9 @@
     <div id="win-contact" class="window" style="top: 30%; left: 35%; width: 400px; height: 350px;">
         <div class="title-bar">
             <div class="window-controls">
-                <button class="control-btn close-btn" onclick="closeWindow('contact')"></button>
-                <button class="control-btn min-btn" onclick="minimizeWindow('contact')"></button>
-                <button class="control-btn max-btn"></button>
+                <button class="control-btn close-btn" aria-label="Close"  onclick="closeWindow('contact')"></button>
+                <button class="control-btn min-btn" aria-label="Minimize"  onclick="minimizeWindow('contact')"></button>
+                <button class="control-btn max-btn" aria-label="Maximize" ></button>
             </div>
             <span class="window-title">Contact</span>
         </div>
@@ -899,9 +910,9 @@
     <div id="win-cv" class="window" style="top: 10%; left: 20%; width: 800px; height: 800px;">
         <div class="title-bar">
             <div class="window-controls">
-                <button class="control-btn close-btn" onclick="closeWindow('cv')"></button>
-                <button class="control-btn min-btn" onclick="minimizeWindow('cv')"></button>
-                <button class="control-btn max-btn"></button>
+                <button class="control-btn close-btn" aria-label="Close"  onclick="closeWindow('cv')"></button>
+                <button class="control-btn min-btn" aria-label="Minimize"  onclick="minimizeWindow('cv')"></button>
+                <button class="control-btn max-btn" aria-label="Maximize" ></button>
             </div>
             <span class="window-title">Resume Viewer</span>
             <div style="margin-left: auto; margin-right: 15px; display: flex; gap: 10px;">
@@ -918,15 +929,15 @@
     <div id="win-about" class="window" style="top: 15%; left: 15%; width: 600px; height: 500px;">
         <div class="title-bar">
             <div class="window-controls">
-                <button class="control-btn close-btn" onclick="closeWindow('about')"></button>
-                <button class="control-btn min-btn" onclick="minimizeWindow('about')"></button>
-                <button class="control-btn max-btn"></button>
+                <button class="control-btn close-btn" aria-label="Close"  onclick="closeWindow('about')"></button>
+                <button class="control-btn min-btn" aria-label="Minimize"  onclick="minimizeWindow('about')"></button>
+                <button class="control-btn max-btn" aria-label="Maximize" ></button>
             </div>
             <span class="window-title">About Me</span>
         </div>
         <div class="window-content">
             <div style="display: flex; gap: 20px; margin-bottom: 20px; align-items: center;">
-                <img src="me.png" alt="Profile" style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid var(--accent-color);">
+                <img src="me.png" alt="Profile" loading="lazy" style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid var(--accent-color);">
                 <div>
                     <h2 style="margin: 0; color: white;">Kanchuka (RicheByte)</h2>
                     <p style="margin: 5px 0; color: #ccc;">Cybersecurity Specialist & Software Engineer</p>
@@ -954,9 +965,9 @@
     <div id="win-projects" class="window" style="top: 20%; left: 20%; width: 900px; height: 600px;">
         <div class="title-bar">
             <div class="window-controls">
-                <button class="control-btn close-btn" onclick="closeWindow('projects')"></button>
-                <button class="control-btn min-btn" onclick="minimizeWindow('projects')"></button>
-                <button class="control-btn max-btn"></button>
+                <button class="control-btn close-btn" aria-label="Close"  onclick="closeWindow('projects')"></button>
+                <button class="control-btn min-btn" aria-label="Minimize"  onclick="minimizeWindow('projects')"></button>
+                <button class="control-btn max-btn" aria-label="Maximize" ></button>
             </div>
             <span class="window-title">Projects - Research Notes</span>
         </div>
@@ -969,9 +980,9 @@
     <div id="win-skills" class="window" style="top: 25%; left: 25%; width: 500px; height: 550px;">
         <div class="title-bar">
             <div class="window-controls">
-                <button class="control-btn close-btn" onclick="closeWindow('skills')"></button>
-                <button class="control-btn min-btn" onclick="minimizeWindow('skills')"></button>
-                <button class="control-btn max-btn"></button>
+                <button class="control-btn close-btn" aria-label="Close"  onclick="closeWindow('skills')"></button>
+                <button class="control-btn min-btn" aria-label="Minimize"  onclick="minimizeWindow('skills')"></button>
+                <button class="control-btn max-btn" aria-label="Maximize" ></button>
             </div>
             <span class="window-title">Skills Overview</span>
         </div>
@@ -1018,9 +1029,9 @@
     <div id="win-notepad" class="window" style="top: 30%; left: 40%; width: 400px; height: 300px;">
         <div class="title-bar">
             <div class="window-controls">
-                <button class="control-btn close-btn" onclick="closeWindow('notepad')"></button>
-                <button class="control-btn min-btn" onclick="minimizeWindow('notepad')"></button>
-                <button class="control-btn max-btn"></button>
+                <button class="control-btn close-btn" aria-label="Close"  onclick="closeWindow('notepad')"></button>
+                <button class="control-btn min-btn" aria-label="Minimize"  onclick="minimizeWindow('notepad')"></button>
+                <button class="control-btn max-btn" aria-label="Maximize" ></button>
             </div>
             <span class="window-title">Notepad</span>
         </div>
@@ -1033,9 +1044,9 @@
     <div id="win-calc" class="window" style="top: 35%; left: 45%; width: 250px; height: 350px;">
         <div class="title-bar">
             <div class="window-controls">
-                <button class="control-btn close-btn" onclick="closeWindow('calc')"></button>
-                <button class="control-btn min-btn" onclick="minimizeWindow('calc')"></button>
-                <button class="control-btn max-btn"></button>
+                <button class="control-btn close-btn" aria-label="Close"  onclick="closeWindow('calc')"></button>
+                <button class="control-btn min-btn" aria-label="Minimize"  onclick="minimizeWindow('calc')"></button>
+                <button class="control-btn max-btn" aria-label="Maximize" ></button>
             </div>
             <span class="window-title">Calculator</span>
         </div>
@@ -1069,9 +1080,9 @@
     <div id="win-browser" class="window" style="top: 10%; left: 15%; width: 900px; height: 600px;">
         <div class="title-bar">
             <div class="window-controls">
-                <button class="control-btn close-btn" onclick="closeWindow('browser')"></button>
-                <button class="control-btn min-btn" onclick="minimizeWindow('browser')"></button>
-                <button class="control-btn max-btn"></button>
+                <button class="control-btn close-btn" aria-label="Close"  onclick="closeWindow('browser')"></button>
+                <button class="control-btn min-btn" aria-label="Minimize"  onclick="minimizeWindow('browser')"></button>
+                <button class="control-btn max-btn" aria-label="Maximize" ></button>
             </div>
             <span class="window-title">Tor Browser - Private Browsing</span>
         </div>
@@ -1084,9 +1095,9 @@
     <div id="win-software" class="window" style="top: 15%; left: 35%; width: 800px; height: 600px;">
         <div class="title-bar">
             <div class="window-controls">
-                <button class="control-btn close-btn" onclick="closeWindow('software')"></button>
-                <button class="control-btn min-btn" onclick="minimizeWindow('software')"></button>
-                <button class="control-btn max-btn"></button>
+                <button class="control-btn close-btn" aria-label="Close"  onclick="closeWindow('software')"></button>
+                <button class="control-btn min-btn" aria-label="Minimize"  onclick="minimizeWindow('software')"></button>
+                <button class="control-btn max-btn" aria-label="Maximize" ></button>
             </div>
             <span class="window-title">Software Center</span>
         </div>
@@ -1099,9 +1110,9 @@
     <div id="win-terminal" class="window" style="top: 20%; left: 30%; width: 700px; height: 450px;">
         <div class="title-bar">
             <div class="window-controls">
-                <button class="control-btn close-btn" onclick="closeWindow('terminal')"></button>
-                <button class="control-btn min-btn" onclick="minimizeWindow('terminal')"></button>
-                <button class="control-btn max-btn"></button>
+                <button class="control-btn close-btn" aria-label="Close"  onclick="closeWindow('terminal')"></button>
+                <button class="control-btn min-btn" aria-label="Minimize"  onclick="minimizeWindow('terminal')"></button>
+                <button class="control-btn max-btn" aria-label="Maximize" ></button>
             </div>
             <span class="window-title">Terminal</span>
         </div>
@@ -1532,6 +1543,22 @@
 
 
 
+
+                // Accessibility: Trigger click on Enter/Space for role="button"
+        document.addEventListener('keydown', (e) => {
+            if ((e.key === 'Enter' || e.key === ' ') && e.target.getAttribute('role') === 'button') {
+                e.preventDefault();
+                e.target.click();
+            }
+        });
+
+                // Accessibility: Trigger click on Enter/Space for role="button"
+        document.addEventListener('keydown', (e) => {
+            if ((e.key === 'Enter' || e.key === ' ') && e.target.getAttribute('role') === 'button') {
+                e.preventDefault();
+                e.target.click();
+            }
+        });
 
         // --- Easter Eggs ---
         const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];

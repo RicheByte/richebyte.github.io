@@ -454,7 +454,7 @@
                     if (!href.startsWith('http') && !href.startsWith('//')) {
                         href = baseUrl + href;
                     }
-                    return `<img src="${href}" alt="${text}" title="${title || ''}">`;
+                    return `<img loading="lazy" src="${href}" alt="${text}" title="${title || ''}">`;
                 };
                 
                 renderer.link = function(href, title, text) {
